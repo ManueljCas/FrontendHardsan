@@ -1,0 +1,164 @@
+/* Contenedor de las notificaciones en la parte superior derecha */
+.notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+    max-width: 380px;
+}
+
+/* Estilos generales de la notificación */
+.notification {
+    display: flex;
+    align-items: center; /* Centra todos los elementos en la misma línea */
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 12px;
+    font-family: Arial, sans-serif;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: slideIn 0.4s ease-out forwards;
+    transition: all 0.3s ease-in-out;
+    background-color: #222; /* Fondo oscuro */
+}
+
+/* Contenido de la notificación */
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+/* Iconos en la notificación */
+.notification-icon {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+}
+
+/* Contenedor del título y mensaje */
+.notification-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Asegura que el título y el mensaje estén alineados correctamente */
+}
+
+/* Título en negrita */
+.notification-title {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 3px; /* Espaciado más pequeño */
+}
+
+/* Animación de entrada */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 🔴 Nueva Animación de salida */
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+}
+
+/* ✅ Se asegura que la animación de salida se ejecute antes de remover */
+.notification.fade-out {
+    animation: slideOut 0.4s ease-out forwards;
+}
+
+/* Botón de cerrar */
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.close-btn:hover {
+    opacity: 0.7;
+}
+
+/* Tipos de notificación */
+.success {
+    border-left: 5px solid #28a745;
+}
+
+.success .notification-icon {
+    color: #28a745;
+}
+
+.error {
+    border-left: 5px solid #dc3545;
+}
+
+.error .notification-icon {
+    color: #dc3545;
+}
+
+.warning {
+    border-left: 5px solid #ffc107;
+    color: black;
+}
+
+.warning .notification-icon {
+    color: #ffc107;
+}
+
+.info {
+    border-left: 5px solid #007bff;
+}
+
+.info .notification-icon {
+    color: #007bff;
+}
+
+/* Efecto sutil al pasar el mouse */
+.notification:hover {
+    transform: scale(1.02);
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 500px) {
+    .notification-container {
+        top: 10px;
+        right: 10px;
+        max-width: 320px;
+    }
+
+    .notification {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .close-btn {
+        font-size: 14px;
+    }
+}

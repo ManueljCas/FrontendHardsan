@@ -1,11 +1,21 @@
-import React from 'react';
+import React from "react";
+import Navbar from "../components/Navbar"; // Importa el Header
 
-const start: React.FC = () => {
+
+const Start: React.FC = () => {
+
   return (
     <div>
-      <h1>Manuel and kiwi</h1>
+      <Navbar /> {/* Incluye el Header en la parte superior */}
+      <div className="content">
+        <h1></h1> {/* Muestra el mensaje dinámico */}
+        <h2>Hola mundo</h2>
+        <ul>
+        
+        </ul>
+      </div>
     </div>
   );
 };
 
-export default start;
+export default Start;

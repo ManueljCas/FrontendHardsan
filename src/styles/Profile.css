@@ -1,4 +1,4 @@
-/* Contenedor principal del perfil */
+/* 📌 Contenedor principal del perfil */
 .profile-container {
   width: 80%;
   max-width: 800px;
@@ -6,17 +6,16 @@
   font-family: Arial, sans-serif;
 }
 
-/* Secciones del perfil */
+/* 📌 Secciones del perfil */
 .profile-section {
   background-color: #f8f8f8;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  
 }
 
-/* Encabezado de cada sección */
+/* 📌 Encabezado de cada sección */
 .profile-header {
   display: flex;
   justify-content: space-between;
@@ -29,7 +28,7 @@
   margin: 0;
 }
 
-/* Botón de edición */
+/* 📌 Botón de edición */
 .profile-edit-button {
   background: none;
   border: none;
@@ -43,7 +42,7 @@
   text-decoration: underline;
 }
 
-/* Información del usuario */
+/* 📌 Información del usuario */
 .profile-info p {
   background: white;
   padding: 10px;
@@ -59,7 +58,7 @@
   color: #333;
 }
 
-/* Modal */
+/* 📌 Modal con estilo similar al formulario de Registro */
 .profile-modal {
   position: fixed;
   top: 0;
@@ -73,52 +72,84 @@
   font-family: Arial, sans-serif;
 }
 
+/* 📌 Contenedor del Modal */
 .profile-modal-content {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
   text-align: center;
-  width: 300px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
 }
 
-/* Inputs dentro del modal */
+/* 📌 Encabezado del Modal */
+.profile-modal-content h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* 📌 Etiquetas */
 .profile-modal-content label {
-  display: block;
-  margin: 10px 0 5px;
   text-align: left;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.2rem;
+  display: block;
 }
 
+/* 📌 Inputs */
 .profile-modal-content input {
   width: 90%;
-  padding: 8px;
+  padding: 0.75rem;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
-  margin-bottom: 10px;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: #ECECEC;
+  margin-bottom: 1rem;
 }
 
-/* Botones */
-.profile-button {
-  margin: 10px;
-  padding: 8px 12px;
-  border: none;
-  background-color: #007bff;
+/* 📌 Select para lada */
+.profile-modal-content select {
+  width: 30%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: #ECECEC;
+  margin-bottom: 1rem;
+  margin:  0px 10px 15px 6px;
+}
+
+/* 📌 Botones */
+.profile-modal-button {
+  padding: 0.75rem;
+  background-color: #d32f2f;
   color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
-  border-radius: 5px;
-  font-size: 14px;
+  transition: background-color 0.3s ease;
 }
 
-.profile-button:hover {
-  background-color: #0056b3;
+.profile-modal-button:hover {
+  background-color: #a52828;
 }
 
-/* Botón de cancelar en el modal */
-.profile-button-cancel {
-  background-color: #d9534f;
+/* 📌 Botón de Cancelar */
+.profile-modal-button-cancel {
+  background-color: #757575;
 }
 
-.profile-button-cancel:hover {
-  background-color: #c9302c;
+.profile-modal-button-cancel:hover {
+  background-color: #5a5a5a;
+}
+
+.phone-input-container{
+  display: flex;
 }

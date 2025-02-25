@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
           <nav className="navbar__nav">
             <a href="start" className="navbar__nav-link">Inicio</a>
             <a href="#productos" className="navbar__nav-link">Productos</a>
-            <a href="#nosotros" className="navbar__nav-link">Nosotros</a>
+            <a href="us" className="navbar__nav-link">Nosotros</a>
             <a href="#contactanos" className="navbar__nav-link">Contáctanos</a>
           </nav>
 

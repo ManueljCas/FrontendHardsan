@@ -1,20 +1,17 @@
 import React from "react";
 import Image from "next/image";
-import { useAuth } from "../context/AuthContext"; // 📌 Importar el contexto de autenticación
+import { useAuth } from "../context/AuthContext";
 import "../styles/Navbar.css";
 
 const Navbar: React.FC = () => {
-  const { user } = useAuth(); // ✅ Obtener el usuario autenticado
+  const { user } = useAuth();
 
   return (
     <header className="navbar">
-      {/* Barra superior */}
       <div className="navbar__top"></div>
 
-      {/* Barra inferior */}
       <div className="navbar__bottom">
         <div className="navbar__container">
-          {/* Logo */}
           <div className="navbar__logo">
             <Image
               src="/img/HardsanLogo.png"
@@ -25,7 +22,6 @@ const Navbar: React.FC = () => {
             />
           </div>
 
-          {/* Navegación */}
           <nav className="navbar__nav">
             <a href="start" className="navbar__nav-link">Inicio</a>
             <a href="#productos" className="navbar__nav-link">Productos</a>
@@ -33,7 +29,6 @@ const Navbar: React.FC = () => {
             <a href="#contactanos" className="navbar__nav-link">Contáctanos</a>
           </nav>
 
-          {/* Buscador y acciones */}
           <div className="navbar__actions">
             <div className="navbar__search-container">
               <input
@@ -56,7 +51,6 @@ const Navbar: React.FC = () => {
               </svg>
             </div>
 
-            {/* 📌 Mostrar opciones según la sesión */}
             {user ? (
               <>
                 <a href="cart" className="navbar__action-link">Carrito</a>

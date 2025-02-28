@@ -3,8 +3,8 @@ import { useRouter } from "next/router";
 import { useAuth } from "../context/AuthContext";
 import NotificationContainer from "../components/NotificationContainer"; 
 import { NotificationType } from "../interfaces/NotificationInterface"; 
-import Image from "next/image"; // ✅ Importar Image de Next.js
-import LogoHardsan from "../IMG/LogoHardsan.png"; // ✅ Importar el logo
+import Image from "next/image";
+import LogoHardsan from "../IMG/LogoHardsan.png";
 import "../styles/Login.css";
 
 const Login: React.FC = () => {
@@ -79,7 +79,6 @@ const Login: React.FC = () => {
     <div className="login">
       <NotificationContainer notifications={notifications} removeNotification={removeNotification} />
       <div className="login__container">
-        {/* ✅ Agregamos el logo arriba del formulario */}
         <div className="login__logo">
           <Image src={LogoHardsan} alt="Hardsan Logo" width={180} height={60} priority />
         </div>

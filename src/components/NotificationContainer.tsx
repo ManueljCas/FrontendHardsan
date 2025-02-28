@@ -1,7 +1,7 @@
 import React from "react";
 import Notification from "./Notifications";
 import { NotificationType } from "../interfaces/NotificationInterface";
-import "../styles/Notification.css"; // Importa los estilos
+import "../styles/Notification.css";
 
 interface NotificationContainerProps {
   notifications: NotificationType[];

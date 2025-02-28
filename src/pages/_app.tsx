@@ -1,8 +1,8 @@
-import { AppProps } from "next/app"; // ✅ Importa AppProps de Next.js
-import { AuthProvider } from "../context/AuthContext"; // ✅ Importa AuthProvider
-import "../styles/globals.css"; // ✅ Importa estilos globales
+import { AppProps } from "next/app";
+import { AuthProvider } from "../context/AuthContext";
+import "../styles/globals.css"; 
 
-function MyApp({ Component, pageProps }: AppProps) { // ✅ Tipamos con AppProps
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <AuthProvider>
       <Component {...pageProps} />

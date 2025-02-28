@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { UserType, AuthContextType } from "../interfaces/AuthInterfaces"; // ✅ Importar interfaces
+import { UserType, AuthContextType } from "../interfaces/AuthInterfaces";
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
@@ -7,11 +7,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [user, setUser] = useState<UserType | null>(null);
 
   useEffect(() => {
-    // ✅ Recuperar usuario del localStorage al cargar la app
     const storedUser = localStorage.getItem("userName");
     const storedUserId = localStorage.getItem("userId");
     const storedUserRole = localStorage.getItem("role");
-    const storedToken = localStorage.getItem("token"); // ✅ Recuperar token
+    const storedToken = localStorage.getItem("token"); 
 
     if (storedUser && storedUserId && storedUserRole && storedToken) {
       setUser({
@@ -23,7 +22,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   }, []);
 
-  // ✅ Función para iniciar sesión y guardar datos en localStorage
   const login = (userData: UserType) => {
     localStorage.setItem("userId", userData.id);
     localStorage.setItem("userName", userData.name);
@@ -33,7 +31,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setUser(userData);
   };
 
-  // ✅ Función para cerrar sesión y limpiar datos
   const logout = () => {
     localStorage.clear();
     setUser(null);

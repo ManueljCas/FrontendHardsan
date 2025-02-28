@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Image from "next/image"; // Componente optimizado de Next.js
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
-import "@/styles/Us.css"; // Importa el CSS desde la carpeta styles
+import "@/styles/Us.css";
+import Footer from "../components/Footer";
 
 const values = [
   { name: "Compromiso", img: "/img/compromiso.png" },
@@ -27,17 +28,19 @@ const Us: React.FC = () => {
   const [startIndex, setStartIndex] = useState(0);
   const [providerIndex, setProviderIndex] = useState(0);
   const visibleItems = 4;
-  const visibleProviders = 5; // Número de proveedores visibles al mismo tiempo
+  const visibleProviders = 6;
 
-  // Movimiento automático del carrusel de proveedores
   useEffect(() => {
     const interval = setInterval(() => {
-      setProviderIndex((prev) =>
-        prev + 1 >= providers.length ? 0 : prev + 1
-      );
+      setProviderIndex((prev) => (prev + 1) % providers.length);
     }, 2500);
     return () => clearInterval(interval);
   }, []);
+
+  const getVisibleProviders = () => {
+    const duplicatedProviders = [...providers, ...providers];
+    return duplicatedProviders.slice(providerIndex, providerIndex + visibleProviders);
+  };
 
   return (
     <>
@@ -52,7 +55,7 @@ const Us: React.FC = () => {
             height={400}
             objectFit="cover"
           />
-          <h1 className="us-slogan">Eslógan chido</h1>
+          <h1 className="us-slogan">Eslógan</h1>
         </div>
 
         <div className="us-cards-container">
@@ -81,9 +84,13 @@ const Us: React.FC = () => {
           </div>
         </div>
 
-        {/* 📌 Sección de Valores con Carrusel Manual */}
         <div className="us-values-container">
-          <button className="us-arrow" onClick={() => setStartIndex((prev) => (prev > 0 ? prev - 1 : values.length - visibleItems))}>
+          <button
+            className="us-arrow"
+            onClick={() =>
+              setStartIndex((prev) => (prev > 0 ? prev - 1 : values.length - visibleItems))
+            }
+          >
             &lt;
           </button>
           <div className="us-values">
@@ -94,30 +101,26 @@ const Us: React.FC = () => {
               </div>
             ))}
           </div>
-          <button className="us-arrow" onClick={() => setStartIndex((prev) => (prev + 1) % values.length)}>
+          <button
+            className="us-arrow"
+            onClick={() => setStartIndex((prev) => (prev + 1) % values.length)}
+          >
             &gt;
           </button>
         </div>
 
-        {/* 📌 Carrusel de Proveedores Automático */}
         <div className="us-providers-container">
           <h2 className="us-providers-title">Nuestros Proveedores</h2>
           <div className="us-providers">
-            {providers
-              .slice(providerIndex, providerIndex + visibleProviders)
-              .map((provider, index) => (
-                <div key={index} className="us-provider-card">
-                  <Image
-                    src={provider.img}
-                    alt={provider.name}
-                    width={150}
-                    height={100}
-                  />
-                </div>
-              ))}
+            {getVisibleProviders().map((provider, index) => (
+              <div key={index} className="us-provider-card">
+                <Image src={provider.img} alt={provider.name} width={150} height={50} />
+              </div>
+            ))}
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

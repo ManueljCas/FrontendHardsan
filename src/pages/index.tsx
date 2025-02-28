@@ -5,7 +5,7 @@ const Redirect: React.FC = () => {
   const router = useRouter();
 
   useEffect(() => {
-    router.replace('/start'); // Redirige a la página /inicio
+    router.replace('/start');
   }, [router]);
 
   return null;

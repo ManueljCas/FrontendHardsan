@@ -1,18 +1,19 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import { useAuth } from "../context/AuthContext"; // Importar el contexto de autenticación
+import Footer from "../components/Footer";
+import { useAuth } from "../context/AuthContext";
 import { useRouter } from "next/router";
-import "../styles/Configuration.css"; // Importamos los estilos
+import "../styles/Configuration.css";
 
 const Configuration: React.FC = () => {
-  const { logout } = useAuth(); // Obtener la función de cierre de sesión
+  const { logout } = useAuth();
   const router = useRouter();
 
   const handleLogout = () => {
     const confirmLogout = window.confirm("¿Estás seguro de que deseas cerrar sesión?");
     if (confirmLogout) {
-      logout(); // Llamar a la función logout del contexto
-      router.push("/start"); // Redirigir a la página de login
+      logout();
+      router.push("/start");
     }
   };
 
@@ -38,6 +39,7 @@ const Configuration: React.FC = () => {
           </ul>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

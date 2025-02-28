@@ -2,7 +2,7 @@ export interface UserType {
     id: string;
     name: string;
     role: string;
-    token: string; // ✅ Agregamos token
+    token: string; 
   }
   
   export interface AuthContextType {

@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import "../styles/Login.css";
-import NotificationContainer from "../components/NotificationContainer"; // ✅ Importar el manejador de notificaciones
-import { NotificationType } from "../interfaces/NotificationInterface"; // ✅ Importar la interfaz
+import NotificationContainer from "../components/NotificationContainer";
+import { NotificationType } from "../interfaces/NotificationInterface";
 import {countryCodes} from "../interfaces/countryCodes"
-
-// Lista de países con sus códigos de país
-
 
 const Register: React.FC = () => {
   const [nombre, setNombre] = useState("");
@@ -153,7 +150,6 @@ const Register: React.FC = () => {
   
   return (
     <div className="login">
-      {/* 📢 Contenedor de Notificaciones */}
       <NotificationContainer notifications={notifications} removeNotification={removeNotification} />
   
       <div className="login__container">
@@ -161,7 +157,6 @@ const Register: React.FC = () => {
         <p className="login__text">Complete los campos solicitados.</p>
   
         <form className="login__form" onSubmit={handleSubmit}>
-          {/* 🔹 Nombre y Apellido */}
           <label className="login__label" htmlFor="nombre">Nombre y apellido</label>
           <input
             id="nombre"
@@ -178,7 +173,6 @@ const Register: React.FC = () => {
             required
           />
   
-          {/* 🔹 Fecha de Nacimiento */}
           <label className="login__label" htmlFor="fechaNacimiento">Fecha de nacimiento</label>
           <input
             id="fechaNacimiento"
@@ -191,7 +185,6 @@ const Register: React.FC = () => {
             max={new Date().toISOString().split("T")[0]}
           />
   
-          {/* 🔹 Número de Teléfono */}
           <label className="login__label" htmlFor="telefono">Número de teléfono</label>
           <div className="phone-input-container">
             <select
@@ -222,7 +215,6 @@ const Register: React.FC = () => {
             />
           </div>
   
-          {/* 🔹 Correo Electrónico */}
           <label className="login__label" htmlFor="correoElectronico">Correo Electrónico</label>
           <input
             id="correoElectronico"
@@ -239,7 +231,6 @@ const Register: React.FC = () => {
             required
           />
   
-          {/* 🔹 Contraseña */}
           <label className="login__label" htmlFor="contrasena">Contraseña</label>
           <input
             id="contrasena"
@@ -256,7 +247,6 @@ const Register: React.FC = () => {
             required
           />
   
-          {/* 🔹 Botón de Registro */}
           <button type="submit" className="login__button">
             Registrarse
           </button>

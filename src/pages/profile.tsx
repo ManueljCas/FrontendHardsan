@@ -2,8 +2,10 @@ import React, { useEffect, useState, useCallback } from "react";
 import Navbar from "../components/Navbar";
 import { UserProfile } from "../interfaces/UserProfile";
 import "../styles/Profile.css";
-import NotificationContainer from "../components/NotificationContainer"; // ✅ Importar el manejador de notificaciones
-import {countryCodes} from "../interfaces/countryCodes"
+import NotificationContainer from "../components/NotificationContainer";
+import {countryCodes} from "../interfaces/countryCodes";
+import Footer from "../components/Footer";
+
 
 const Profile: React.FC = () => {
   const [user, setUser] = useState<UserProfile | null>(null);
@@ -72,7 +74,6 @@ const Profile: React.FC = () => {
   const handleSave = async () => {
     if (!editData || !user) return;
 
-    // 🚨 Verificar si los datos han cambiado antes de enviarlos
     if (
       editData.nombre === user.nombre &&
       editData.fechaNacimiento === user.fechaNacimiento?.split("T")[0] &&
@@ -122,7 +123,6 @@ const Profile: React.FC = () => {
 
   return (
     <div className="login">
-      {/* 📢 Contenedor de Notificaciones */}
       <NotificationContainer notifications={notifications} removeNotification={removeNotification} />
   
       <Navbar />
@@ -180,7 +180,6 @@ const Profile: React.FC = () => {
   
             {editSection === "personal" ? (
               <>
-                {/* 🔹 Nombre y Apellido */}
                 <label className="login__label">Nombre completo:</label>
                 <input
                   type="text"
@@ -196,7 +195,6 @@ const Profile: React.FC = () => {
                   className="login__input"
                 />
   
-                {/* 🔹 Fecha de Nacimiento */}
                 <label className="login__label">Fecha de nacimiento:</label>
                 <input
                   type="date"
@@ -208,7 +206,6 @@ const Profile: React.FC = () => {
                   max={new Date().toISOString().split("T")[0]}
                 />
   
-                {/* 🔹 Número de Teléfono con Lada */}
                 <label className="login__label">Número de teléfono:</label>
                 <div className="phone-input-container">
                   <select
@@ -242,7 +239,6 @@ const Profile: React.FC = () => {
               </>
             ) : (
               <>
-                {/* 🔹 Contraseña actual */}
                 <label className="login__label">Contraseña actual:</label>
                 <input
                   type="password"
@@ -253,7 +249,6 @@ const Profile: React.FC = () => {
                   className="login__input"
                 />
   
-                {/* 🔹 Nueva Contraseña */}
                 <label className="login__label">Nueva contraseña:</label>
                 <input
                   type="password"
@@ -271,7 +266,6 @@ const Profile: React.FC = () => {
               </>
             )}
   
-            {/* 🔹 Botones del Modal */}
             <button className="login__button" onClick={handleSave}>
               Guardar
             </button>
@@ -281,6 +275,7 @@ const Profile: React.FC = () => {
           </div>
         </div>
       )}
+            <Footer />
     </div>
   );
 }  

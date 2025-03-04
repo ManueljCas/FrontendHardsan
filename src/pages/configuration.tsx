@@ -28,7 +28,7 @@ const Configuration: React.FC = () => {
               Perfil <span>&gt;</span>
             </li>
             <li className="config-item" onClick={() => router.push("/orders")}>
-              Pedidos <span className="notification">9</span> <span>&gt;</span>
+              Pedidos <span className="notification-config">9</span> <span>&gt;</span>
             </li>
             <li className="config-item" onClick={() => router.push("/TermsAndConditions")}>
               Términos y condiciones <span>&gt;</span>

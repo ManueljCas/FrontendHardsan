@@ -1,0 +1,139 @@
+/* Contenedor principal */
+.container {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    align-items: flex-start; /* Asegura que los filtros y los productos estén alineados */
+  }
+  
+  /* Estilos del contenedor de filtros */
+  .filters {
+    width: 250px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    border-radius: 5px;
+    height: auto; /* ✅ Evita que crezca */
+    position: sticky; /* ✅ Mantiene los filtros fijos */
+    top: 20px; /* ✅ Espaciado desde arriba */
+    max-height: 90vh; /* ✅ Limita la altura para que no sea demasiado grande */
+    overflow-y: auto; /* ✅ Si hay muchos filtros, permite hacer scroll dentro del contenedor */
+  }
+  
+  /* Títulos de los filtros */
+  .filters h3 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .filters h4 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  
+  /* Línea divisoria */
+  hr {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 10px 0;
+  }
+  
+  /* Sección de filtros */
+  .filter-section {
+    padding: 5px 0;
+  }
+  
+  /* Estilos de los checkbox en los filtros */
+  .filters label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .filters input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  /* Estilos del input range (precio) */
+  .filters input[type="range"] {
+    width: 100%;
+  }
+  
+  /* Rango de precios */
+  .price-range {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Contenedor de productos */
+  .products {
+    flex: 1;
+  }
+  
+  /* Grid de productos */
+  .product-grid {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Tarjetas de productos */
+  .product-card {
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  /* Botón "Ver más" */
+  .view-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    margin: 20px auto;
+    padding: 8px 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .view-more::after {
+    content: "v"; /* Flecha hacia abajo */
+    font-size: 16px;
+    margin-left: 5px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .view-more:hover {
+    opacity: 0.7;
+  }
+  
+  .view-more:hover::after {
+    transform: translateY(3px); /* Efecto de movimiento en la flecha */
+  }
+  

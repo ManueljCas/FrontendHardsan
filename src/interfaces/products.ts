@@ -1,0 +1,18 @@
+export const allProducts = [
+    { id: 1, name: "Cerradura Yale YRD6", price: "$100", image: "/img/Cajafuerte.png" },
+    { id: 2, name: "Cerradura Yale YRD6", price: "$100", image: "/img/Cajafuerte.png" },
+    { id: 3, name: "Cerradura Yale YRD6", price: "$100", image: "/img/Cajafuerte.png" },
+    { id: 4, name: "Cerradura Yale YRD6", price: "$100", image: "/img/Cajafuerte.png" },
+    { id: 5, name: "Cerradura Yale YRD6", price: "$100", image: "/img/Cajafuerte.png" },
+    { id: 6, name: "Cerradura Yale YRD6", price: "$100", image: "/img/Cajafuerte.png" },
+    { id: 7, name: "Cerradura Yale YRD6", price: "$100", image: "/img/Cajafuerte.png" },
+    { id: 8, name: "Cerradura Yale YRD6", price: "$100", image: "/img/Cajafuerte.png" },
+    { id: 9, name: "Cerradura Yale YRD6", price: "$100", image: "/img/Cajafuerte.png" },
+    { id: 10, name: "Cerradura Yale YRD6", price: "$100", image: "/img/Cajafuerte.png" },
+    { id: 11, name: "Cerradura Yale YRD6", price: "$100", image: "/img/Cajafuerte.png" },
+    { id: 12, name: "Cerradura Yale YRD6", price: "$100", image: "/img/Cajafuerte.png" },
+    { id: 13, name: "Cerradura Yale YRD6", price: "$100", image: "/img/Cajafuerte.png" },
+    { id: 14, name: "Cerradura Yale YRD6", price: "$100", image: "/img/Cajafuerte.png" },
+    { id: 15, name: "Cerradura Yale YRD6", price: "$100", image: "/img/Cajafuerte.png" },
+    { id: 16, name: "Cerradura Yale YRD6", price: "$100", image: "/img/Cajafuerte.png" },
+  ];

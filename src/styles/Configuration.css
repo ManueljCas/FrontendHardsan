@@ -45,7 +45,7 @@
     transform: scale(1.02);
   }
   
-  .notification {
+  .notification-config {
     color: red;
     font-size: 14px;
     font-weight: bold;

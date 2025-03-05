@@ -1,0 +1,119 @@
+.cartdata-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Estilos del formulario */
+.cartdata-form {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 2;
+}
+
+.cartdata-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Sección con los campos de tarjeta + imagen */
+.cartdata-card-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Agrupación de los campos */
+.cartdata-fields {
+    width: 75%;
+}
+
+/* Grupo de inputs */
+.cartdata-input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.cartdata-input-group label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+/* Inputs estilizados */
+.cartdata-input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+/* Tamaños de los inputs */
+.full-width {
+    width: 100%;
+}
+
+.small {
+    width: 100px;
+}
+
+/* Contenedor para la tarjeta */
+.cartdata-card-icon {
+    width: 90px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Imagen de tarjeta */
+.cartdata-card-icon img {
+    width: 100%;
+    height: auto;
+}
+
+/* Sección derecha: Total y Continuar */
+.cartdata-summary {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1;
+    max-width: 280px;
+    max-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cartdata-total-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.cartdata-total-price {
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.cartdata-continue-btn {
+    background-color: white;
+    color: black;
+    padding: 14px 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s ease-in-out;
+}
+
+.cartdata-continue-btn:hover {
+    background-color: #f1f1f1;
+}

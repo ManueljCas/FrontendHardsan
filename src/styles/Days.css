@@ -1,0 +1,103 @@
+.days-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Sección Izquierda */
+.days-options {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 2;
+}
+
+.days-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Estilo para la sección de días no disponibles */
+.days-title.unavailable {
+    margin-top: 20px;
+    color: #777;
+}
+
+.days-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.days-button {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.days-button:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilo cuando se selecciona un día */
+.days-button.selected {
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+/* Estilo para los días no disponibles */
+.days-button.disabled {
+    background-color: #e0e0e0;
+    color: #999;
+    cursor: not-allowed;
+}
+
+/* Sección Derecha */
+.days-summary {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1;
+    max-width: 280px;
+    max-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.days-total-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.days-total-price {
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.days-continue-btn {
+    background-color: white;
+    color: black;
+    padding: 14px 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s ease-in-out;
+}
+
+.days-continue-btn:hover {
+    background-color: #f1f1f1;
+}

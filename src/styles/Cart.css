@@ -1,0 +1,137 @@
+.cart-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Estilos de la tabla */
+.cart-items {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 2;
+}
+
+/* Tabla sin afectar globalmente */
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Línea separadora debajo de los encabezados */
+.cart-table thead {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Estilos de los encabezados */
+.cart-header {
+    font-weight: bold;
+    padding: 15px;
+    text-align: left;
+}
+
+/* Filas de productos */
+.cart-row {
+
+    border-bottom: 1px solid #ddd;
+}
+
+/* Espaciado en las celdas */
+.cart-price,
+.cart-quantity,
+.cart-total {
+    padding: 15px;
+}
+
+/* Contenedor de la imagen con fondo gris */
+.cart-image-container {
+    background: #f3f3f3;
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 10px auto;
+}
+
+.cart-image {
+    width: 50px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Acciones de la tabla */
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.cart-add-more {
+    background-color: green;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart-delete-all {
+    background-color: red;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart-delete-btn {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+}
+
+/* Sección derecha: Total */
+.cart-summary {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1;
+    max-width: 280px;
+    max-height: 200px;  /* 🔹 Reduje la altura del cuadro */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Estilos del título "Total" */
+.cart-total-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Estilos del precio total */
+.cart-total-price {
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Botón de pagar */
+.cart-pay-btn {
+    background-color: white;
+    color: black;
+    padding: 14px 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s ease-in-out;
+}
+
+.cart-pay-btn:hover {
+    background-color: #f1f1f1;
+}

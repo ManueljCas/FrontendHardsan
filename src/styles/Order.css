@@ -1,0 +1,114 @@
+.order-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #eeeeee;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .order-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para la información del pedido */
+  .order-info {
+    text-align: left;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Cada fila de información */
+  .order-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+  }
+  
+  .order-label {
+    font-weight: bold;
+  }
+  
+  /* Línea divisoria entre filas */
+  .order-divider {
+    height: 1px;
+    background: #ddd;
+    width: 100%;
+  }
+  
+  /* Estado en rojo */
+  .order-status {
+    color: red;
+    font-weight: bold;
+  }
+  
+  /* Estilos para los productos */
+  .order-products {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .product-card {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Nombre del producto arriba */
+  .product-name {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  /* Línea divisoria debajo del nombre y de la imagen */
+  .product-divider {
+    height: 1px;
+    background: #ddd;
+    width: 100%;
+    margin: 8px 0;
+  }
+  
+  /* Imagen del producto */
+  .product-image {
+    width: 80px;
+    height: auto;
+    margin-bottom: 8px;
+  }
+  
+  /* Cantidad alineada correctamente */
+  .product-quantity {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 14px;
+  }
+  
+  /* Botón de descarga */
+  .download-btn {
+    background: black;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .download-btn:hover {
+    background: #333;
+  }
+  

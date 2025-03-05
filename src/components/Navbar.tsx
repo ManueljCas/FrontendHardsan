@@ -1,13 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { useAuth } from "../context/AuthContext";
 import "../styles/Navbar.css";
 
 const Navbar: React.FC = () => {
   const { user } = useAuth();
+  const [isHidden, setIsHidden] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100 && window.scrollY > lastScrollY) {
+        setIsHidden(true); // Oculta el navbar cuando baja más de 100px
+      } else if (window.scrollY <= 90) {
+        setIsHidden(false); // Solo eaparece si sube hasta los primeros 100px
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
 
   return (
-    <header className="navbar">
+    <header className={`navbar ${isHidden ? "hidden" : ""}`}>
       <div className="navbar__top"></div>
 
       <div className="navbar__bottom">

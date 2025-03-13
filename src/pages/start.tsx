@@ -1,7 +1,10 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
-import Image from "next/image";
+import React from "react";
 import Navbar from "../components/Navbar";
-import styles from "../styles/Start.module.css";
+import Carousel from "../components/Start/Carousel";
+import NewProducts from "../components/Start/NewProducts";
+import Categories from "../components/Start/Categories";
+import BestSellingProduct from "@/components/Start/BestSellingProducts";
+import Footer from "@/components/Footer";
 
 const slides = [
   {
@@ -22,67 +25,16 @@ const slides = [
 ];
 
 const Start: React.FC = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
-
-  const nextSlide = useCallback(() => {
-    setIsAnimating(true);
-    setTimeout(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-      setIsAnimating(false);
-    }, 500);
-    resetTimer();
-  }, []);
-
-  const prevSlide = useCallback(() => {
-    setIsAnimating(true);
-    setTimeout(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === 0 ? slides.length - 1 : prevIndex - 1
-      );
-      setIsAnimating(false);
-    }, 500);
-    resetTimer();
-  }, []);
-
-  const resetTimer = useCallback(() => {
-    if (timerRef.current) clearTimeout(timerRef.current);
-    timerRef.current = setTimeout(nextSlide, 3000);
-  }, [nextSlide]);
-
-  useEffect(() => {
-    timerRef.current = setTimeout(nextSlide, 3000);
-    return () => {
-      if (timerRef.current) clearTimeout(timerRef.current);
-    };
-  }, [currentIndex, nextSlide]);
-
   return (
     <div>
       <Navbar />
-      <div className={styles.content}>
-        <div className={styles.sliderContainer}>
-          <button className={styles.prev} onClick={prevSlide}>❮</button>
-
-          <div className={`${styles.sliderImage} ${isAnimating ? styles.fade : ""}`}>
-            <Image
-              src={slides[currentIndex].image}
-              alt="slider"
-              width={1400}
-              height={500}
-              layout="responsive"
-              priority
-            />
-            <div className={styles.textOverlay}>
-              <h1>{slides[currentIndex].title}</h1>
-              <h2>{slides[currentIndex].subtitle}</h2>
-            </div>
-          </div>
-
-          <button className={styles.next} onClick={nextSlide}>❯</button>
-        </div>
+      <div className="content">
+        <Carousel slides={slides} />
+        <NewProducts />
+        <Categories />
+        <BestSellingProduct />
       </div>
+      <Footer />
     </div>
   );
 };

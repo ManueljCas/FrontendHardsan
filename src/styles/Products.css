@@ -1,139 +1,196 @@
-/* Contenedor principal */
-.container {
-    display: flex;
-    padding: 20px;
-    gap: 20px;
-    align-items: flex-start; /* Asegura que los filtros y los productos estén alineados */
-  }
-  
-  /* Estilos del contenedor de filtros */
-  .filters {
-    width: 250px;
-    padding: 15px;
-    border: 1px solid #ccc;
-    background: #f9f9f9;
-    border-radius: 5px;
-    height: auto; /* ✅ Evita que crezca */
-    position: sticky; /* ✅ Mantiene los filtros fijos */
-    top: 20px; /* ✅ Espaciado desde arriba */
-    max-height: 90vh; /* ✅ Limita la altura para que no sea demasiado grande */
-    overflow-y: auto; /* ✅ Si hay muchos filtros, permite hacer scroll dentro del contenedor */
-  }
-  
-  /* Títulos de los filtros */
-  .filters h3 {
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  .filters h4 {
-    font-size: 14px;
-    font-weight: bold;
-    margin-top: 15px;
-  }
-  
-  /* Línea divisoria */
-  hr {
-    border: none;
-    height: 1px;
-    background-color: #ddd;
-    margin: 10px 0;
-  }
-  
-  /* Sección de filtros */
-  .filter-section {
-    padding: 5px 0;
-  }
-  
-  /* Estilos de los checkbox en los filtros */
-  .filters label {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    color: #333;
-    margin-bottom: 5px;
-  }
-  
-  .filters input[type="checkbox"] {
-    margin-right: 5px;
-  }
-  
-  /* Estilos del input range (precio) */
-  .filters input[type="range"] {
-    width: 100%;
-  }
-  
-  /* Rango de precios */
-  .price-range {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-    color: #666;
-  }
-  
-  /* Contenedor de productos */
-  .products {
-    flex: 1;
-  }
-  
-  /* Grid de productos */
-  .product-grid {
-    margin-top: 10px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-  }
-  
-  /* Tarjetas de productos */
-  .product-card {
-    padding: 15px;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .product-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .product-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-  }
-  
-  /* Botón "Ver más" */
-  .view-more {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 120px;
-    margin: 20px auto;
-    padding: 8px 0;
-    font-size: 14px;
-    font-weight: bold;
-    color: #333;
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: opacity 0.3s ease-in-out;
-  }
-  
-  .view-more::after {
-    content: "v"; /* Flecha hacia abajo */
-    font-size: 16px;
-    margin-left: 5px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .view-more:hover {
-    opacity: 0.7;
-  }
-  
-  .view-more:hover::after {
-    transform: translateY(3px); /* Efecto de movimiento en la flecha */
-  }
-  
+.products-container {
+  background: #fff;
+  padding-bottom: 2rem;
+}
+
+.products-layout {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: flex-start;
+}
+
+/* Sidebar */
+.products-sidebar {
+  width: 260px;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  background-color: #fafafa;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.sidebar-section {
+  margin-bottom: 2rem;
+}
+
+.sidebar-section h3 {
+  font-size: 16px;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.sidebar-link {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 5px 0;
+  color: #222;
+  transition: color 0.2s ease;
+}
+
+.sidebar-link:hover {
+  color: #d00;
+}
+
+.sidebar-link.active {
+  color: #d00;
+  font-weight: bold;
+}
+
+.sidebar-sublink {
+  padding-left: 1rem;
+  color: #555;
+  font-size: 13px;
+  margin: 2px 0;
+}
+
+/* Contenedor general de productos */
+.products-box {
+  flex-grow: 1;
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Encabezado de productos */
+.products-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.products-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #111;
+}
+
+.products-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  font-size: 14px;
+  color: #444;
+  align-items: center;
+}
+
+.products-toolbar span {
+  cursor: default;
+}
+
+.products-view {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.icon-grid,
+.icon-list {
+  font-size: 16px;
+  cursor: pointer;
+  padding: 2px 6px;
+}
+
+.icon-grid:hover,
+.icon-list:hover {
+  background-color: #e0e0e0;
+  border-radius: 4px;
+}
+
+/* Grid de productos */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  text-align: center;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.product-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #3cb043;
+  color: white;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.product-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 0.5rem;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.4s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.img-hover {
+  opacity: 0;
+}
+
+.product-image:hover .img-main {
+  opacity: 0;
+}
+
+.product-image:hover .img-hover {
+  opacity: 1;
+}
+
+.product-brand {
+  font-size: 13px;
+  color: #444;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.product-name {
+  font-size: 15px;
+  font-weight: bold;
+  color: #111;
+  min-height: 42px;
+}
+
+.product-price {
+  font-size: 14px;
+  color: #555;
+}
+
+.product-status {
+  font-size: 14px;
+  color: #2ecc71;
+  font-weight: 500;
+}

@@ -1,0 +1,96 @@
+.adminuser-layout {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .adminuser-content {
+    flex: 1;
+    background-color: #f6f6f6;
+    padding: 60px;
+    overflow-y: auto;
+    height: 100vh;
+    box-sizing: border-box;
+  }
+  
+  .adminuser-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  
+  .adminuser-section {
+    background-color: #f1f1f1;
+    padding: 30px;
+    border-radius: 16px;
+  }
+  
+  .adminuser-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+  
+  .adminuser-section-header.center-title {
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .adminuser-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 auto;
+    text-align: center;
+    flex: 1;
+  }
+  
+  .adminuser-back {
+    background: none;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: #1c1f2f;
+  }
+  
+  .adminuser-edit {
+    background: none;
+    border: none;
+    color: #1c1f2f;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .adminuser-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .adminuser-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 14px;
+    font-size: 16px;
+  }
+  
+  .adminuser-row:last-child {
+    border-bottom: none;
+  }
+  
+  .adminuser-row span {
+    font-size: 16px;
+  }
+  
+  .adminuser-estado.activo {
+    color: green;
+    font-weight: bold;
+  }
+  

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { useAuth } from "../context/AuthContext";
-import NotificationContainer from "../components/NotificationContainer"; 
-import { NotificationType } from "../interfaces/NotificationInterface"; 
+import NotificationContainer from "../components/NotificationContainer";
+import { NotificationType } from "../interfaces/NotificationInterface";
 import Image from "next/image";
 import LogoHardsan from "../IMG/LogoHardsan.png";
 import "../styles/Login.css";
@@ -14,13 +14,16 @@ const Login: React.FC = () => {
   const { login } = useAuth();
   const [notifications, setNotifications] = useState<NotificationType[]>([]);
 
-  const addNotification = (message: string, type: "success" | "error" | "info" | "warning") => {
+  const addNotification = (
+    message: string,
+    type: "success" | "error" | "info" | "warning"
+  ) => {
     const newNotification: NotificationType = { id: Date.now(), message, type };
     setNotifications((prev) => [...prev, newNotification]);
 
     setTimeout(() => {
       removeNotification(newNotification.id);
-    }, 5000); 
+    }, 5000);
   };
 
   const removeNotification = (id: number) => {
@@ -51,6 +54,7 @@ const Login: React.FC = () => {
       }
 
       const data = await response.json();
+      console.log("🚀 DATA RECIBIDA DEL BACKEND:", data); // Verifica el contenido de la respuesta
 
       login({
         id: data.userId,
@@ -62,7 +66,14 @@ const Login: React.FC = () => {
       addNotification("Inicio de sesión exitoso. Redirigiendo...", "success");
 
       setTimeout(() => {
-        router.push("/start");
+        const roleLower = (data.role || "").toLowerCase();
+        console.log("🛡️ Rol detectado:", roleLower);
+
+        if (roleLower === "admin") {
+          router.push("/YWRtaW4tZGFzaGJvYXJk"); // Ruta codificada para Admin
+        } else {
+          router.push("/start"); // Cliente
+        }
       }, 1500);
     } catch (error: unknown) {
       let errorMessage = "Hubo un error al intentar iniciar sesión.";
@@ -77,18 +88,30 @@ const Login: React.FC = () => {
 
   return (
     <div className="login">
-      <NotificationContainer notifications={notifications} removeNotification={removeNotification} />
+      <NotificationContainer
+        notifications={notifications}
+        removeNotification={removeNotification}
+      />
       <div className="login__container">
         <div className="login__logo">
-          <Image src={LogoHardsan} alt="Hardsan Logo" width={180} height={60} priority />
+          <Image
+            src={LogoHardsan}
+            alt="Hardsan Logo"
+            width={180}
+            height={60}
+            priority
+          />
         </div>
-        
+
         <p className="login__text">
-          Ingresa tus datos para acceder a tu cuenta y disfrutar de nuestros servicios.
+          Ingresa tus datos para acceder a tu cuenta y disfrutar de nuestros
+          servicios.
         </p>
-        
+
         <form className="login__form" onSubmit={handleLogin}>
-          <label htmlFor="email" className="login__label">Correo Electrónico</label>
+          <label htmlFor="email" className="login__label">
+            Correo Electrónico
+          </label>
           <input
             id="email"
             type="email"
@@ -98,8 +121,10 @@ const Login: React.FC = () => {
             placeholder="Ingresa tu correo electrónico..."
             required
           />
-          
-          <label htmlFor="password" className="login__label">Contraseña</label>
+
+          <label htmlFor="password" className="login__label">
+            Contraseña
+          </label>
           <input
             id="password"
             type="password"
@@ -109,12 +134,17 @@ const Login: React.FC = () => {
             placeholder="Ingresa tu contraseña..."
             required
           />
-          
-          <button type="submit" className="login__button">Iniciar sesión</button>
+
+          <button type="submit" className="login__button">
+            Iniciar sesión
+          </button>
         </form>
-        
+
         <p className="login__register">
-          ¿Aún no tienes una cuenta? <a href="register" className="login__link">Regístrate aquí</a>
+          ¿Aún no tienes una cuenta?{" "}
+          <a href="register" className="login__link">
+            Regístrate aquí
+          </a>
         </p>
       </div>
     </div>

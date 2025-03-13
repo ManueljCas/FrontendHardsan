@@ -1,24 +1,34 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { UserType, AuthContextType } from "../interfaces/AuthInterfaces";
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
+// Extendemos la interfaz para incluir `isLoading`
+interface AuthContextWithLoading extends AuthContextType {
+  isLoading: boolean;
+}
+
+const AuthContext = createContext<AuthContextWithLoading | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<UserType | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const storedUser = localStorage.getItem("userName");
-    const storedUserId = localStorage.getItem("userId");
-    const storedUserRole = localStorage.getItem("role");
-    const storedToken = localStorage.getItem("token"); 
+    if (typeof window !== "undefined") {
+      const storedUser = localStorage.getItem("userName");
+      const storedUserId = localStorage.getItem("userId");
+      const storedUserRole = localStorage.getItem("role");
+      const storedToken = localStorage.getItem("token");
 
-    if (storedUser && storedUserId && storedUserRole && storedToken) {
-      setUser({
-        id: storedUserId,
-        name: storedUser,
-        role: storedUserRole,
-        token: storedToken,
-      });
+      if (storedUser && storedUserId && storedUserRole && storedToken) {
+        setUser({
+          id: storedUserId,
+          name: storedUser,
+          role: storedUserRole,
+          token: storedToken,
+        });
+      }
+
+      setIsLoading(false); // ya terminó de cargar
     }
   }, []);
 
@@ -27,7 +37,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     localStorage.setItem("userName", userData.name);
     localStorage.setItem("role", userData.role);
     localStorage.setItem("token", userData.token);
-    
+
     setUser(userData);
   };
 
@@ -37,7 +47,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, isLoading }}>
       {children}
     </AuthContext.Provider>
   );

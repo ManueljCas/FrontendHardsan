@@ -1,22 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import "../styles/Product.css"; 
+import "../styles/Product.css";
+
+const imageList = [
+  "/img/Cerradura.png",
+  "/img/Cajafuerte.png",
+  "/img/Cerradura.png",
+  "/img/Cajafuerte.png",
+];
 
 const Product: React.FC = () => {
+  const [mainImage, setMainImage] = useState<string>(imageList[0]);
+
   return (
     <>
       <Navbar />
       <div className="product-container">
         <div className="product-gallery">
           <div className="thumbnail-list">
-            <img src="/img/Cerradura.png" alt="Miniatura 1" />
-            <img src="/img/Cerradura.png" alt="Miniatura 2" />
-            <img src="/img/Cerradura.png" alt="Miniatura 3" />
-            <img src="/img/Cerradura.png" alt="Miniatura 4" />
+            {imageList.map((img, index) => (
+              <img
+                key={index}
+                src={img}
+                alt={`Miniatura ${index + 1}`}
+                onMouseEnter={() => setMainImage(img)}
+                // Si prefieres que cambie al dar clic en lugar de pasar el mouse:
+                // onClick={() => setMainImage(img)}
+              />
+            ))}
           </div>
           <div className="main-image">
-            <img src="/img/Cerradura.png" alt="Producto principal" />
+            <img src={mainImage} alt="Producto principal" />
           </div>
         </div>
 

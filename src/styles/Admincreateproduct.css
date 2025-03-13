@@ -1,0 +1,98 @@
+.admincreateproduct-layout {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .admincreateproduct-content {
+    flex: 1;
+    padding: 40px;
+    background-color: #fff;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+  
+  .admincreateproduct-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  /* 💡 NUEVO fondo para el formulario */
+  .admincreateproduct-card {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .admincreateproduct-form input,
+  .admincreateproduct-form textarea,
+  .admincreateproduct-card input,
+  .admincreateproduct-card textarea {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  .admincreateproduct-form textarea,
+  .admincreateproduct-card textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .admincreateproduct-form button,
+  .admincreateproduct-card button {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #1c1f2f;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .admincreateproduct-form button:hover,
+  .admincreateproduct-card button:hover {
+    background-color: #333;
+  }
+  
+  /* 💡 Imágenes centradas */
+  .admincreateproduct-previews {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .admincreateproduct-previews img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  /* 💡 Estilo del botón para subir imágenes */
+  .admincreateproduct-upload-btn {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .admincreateproduct-upload-btn:hover {
+    background-color: #f0f0f0;
+  }
+  

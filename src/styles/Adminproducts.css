@@ -1,0 +1,170 @@
+.adminproducts-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.adminproducts-content {
+  flex: 1;
+  background-color: white;
+  padding: 40px;
+  overflow-y: auto;
+  height: 100vh;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.adminproducts-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.adminproducts-search {
+  display: flex;
+  gap: 10px;
+  margin: 0 auto 30px auto;
+  max-width: 600px;
+}
+
+.adminproducts-search input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.adminproducts-search button {
+  padding: 10px 20px;
+  background-color: #1c1f2f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.adminproducts-search button:hover {
+  background-color: #333;
+}
+
+.adminproducts-table-wrapper {
+  overflow-x: auto;
+}
+
+.adminproducts-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.adminproducts-table th,
+.adminproducts-table td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;
+}
+
+.adminproducts-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.adminproducts-acciones {
+  position: relative;
+  z-index: 10;
+}
+
+.adminproducts-menu-toggle {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.adminproducts-menu {
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%) translateX(-10px);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 6px 0;
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  opacity: 0;
+  animation: fadeLeft 0.25s ease-out forwards;
+}
+
+@keyframes fadeLeft {
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+.adminproducts-menu button {
+  all: unset;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+  text-align: center;
+}
+
+.adminproducts-menu button:hover {
+  background-color: #f0f0f0;
+}
+
+.adminproducts-create {
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+  background-color: #1c1f2f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 20;
+}
+
+.adminproducts-create:hover {
+  background-color: #333;
+}
+
+/* 🔥 NUEVA PAGINACIÓN */
+.adminproducts-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.adminproducts-pagination button {
+  background-color: #e0e0e0;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.adminproducts-pagination button:hover {
+  background-color: #ccc;
+}
+
+.adminproducts-page-button.active {
+  background-color: #1c1f2f;
+  color: white;
+}

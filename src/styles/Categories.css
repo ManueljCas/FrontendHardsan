@@ -1,0 +1,76 @@
+.categories-container {
+    background-color: #f1f1f1;
+    padding: 25px 25px 20px;
+    margin-top: 40px;
+    border-radius: 15px;
+    max-width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  
+  .categories-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .categories-top,
+  .categories-bottom {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .category-large,
+  .category-small {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .category-large {
+    flex: 2;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 50px;
+    padding: 0 20px;
+  }
+  
+  .category-small {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    padding: 15px 10px;
+  }
+  
+  .category-large img,
+  .category-small img {
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  .category-large p,
+  .category-small p {
+    font-size: 30px;
+    font-weight: 500;
+    margin: 10px;
+  }
+  
+  /* ✅ ESTILO EXCLUSIVO PARA TORNILLERÍA */
+  .tornilleria-custom {
+    padding-left: 30px;
+    padding-right: 0px;
+    text-align: left;
+  }
+  
+  .tornilleria-custom p {
+    flex: 1;
+    margin-left: 10px;
+  }
+  
